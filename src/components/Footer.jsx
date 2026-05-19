@@ -51,8 +51,8 @@ const Footer = () => {
                 </div>
 
                 <div className='mt-3 md:flex justify-between'>
-                    <h1>© 2025 SunCart. All rights reserved.</h1>
-                    <h1>Made with ☀ for summer lovers</h1>
+                    <h1>© 2026 DriveEasy. All rights reserved.</h1>
+                    <h1>Made with ☀ for adventure lovers.</h1>
                 </div>
             </div>
             
