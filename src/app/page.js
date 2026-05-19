@@ -1,3 +1,4 @@
+import AvailableCars from "@/components/AvailableCars";
 import Banner from "@/components/Banner";
 import ChooseUsSection from "@/components/ChooseUsSection";
 import TopBrandsSection from "@/components/TopBrandsSection";
@@ -7,6 +8,7 @@ export default function Home() {
   return (
     <div className="max-w-7xl mx-auto">
      <Banner />
+     <AvailableCars />
      <TopBrandsSection />
      <ChooseUsSection />
     </div>
