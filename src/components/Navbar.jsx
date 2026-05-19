@@ -23,7 +23,7 @@ const Navbar = () => {
             </ul>
 
             <Button variant="primary"><NavLink href={'/register'}>Register</NavLink></Button>
-            <Button variant='primary'>Login</Button>
+            <Button variant='primary'><NavLink href={'/login'}>Login</NavLink></Button>
             
 
             

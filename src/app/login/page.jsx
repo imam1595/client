@@ -38,7 +38,7 @@ const LoginPage = () => {
         <div className="flex flex-col items-center justify-center mt-10 gap-5">
 
             <div className="text-center my-3">
-                <h1 className="font-bold text-2xl">Create Account</h1>
+                <h1 className="font-bold text-2xl">Login</h1>
             </div>
 
             <Card className="border">
@@ -87,7 +87,7 @@ const LoginPage = () => {
                     <div className="flex gap-2">
                         <Button variant="primary" type="submit" className={'w-full'}>
                         <Check />
-                        Create Account
+                        Login
                         </Button>
                         
                     </div>
