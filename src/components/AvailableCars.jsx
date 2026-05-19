@@ -18,7 +18,7 @@ const AvailableCars = async () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {
-                    cars.slice(0,3).map((car) => <CarCard key={car._id} car={car}></CarCard>)
+                    cars.slice(0,6).map((car) => <CarCard key={car._id} car={car}></CarCard>)
                 }
             </div>
         </div>

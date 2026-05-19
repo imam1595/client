@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+
+
 const CarCard = ({car}) => {
 
     // console.log(car)
@@ -27,6 +29,11 @@ const CarCard = ({car}) => {
                     <p className="text-gray-500 mt-3">
                         Rental Price:
                     {car.price}
+                    </p>
+
+                    <p className="text-gray-500 mt-3">
+                        Availability:
+                    {car.availability}
                     </p>
     
                     <Link href={`/explore-cars/${car._id}`}><button className="mt-5 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl transition">

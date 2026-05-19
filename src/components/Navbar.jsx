@@ -5,6 +5,7 @@ import NavLink from './NavLink';
 import { FaCarSide } from "react-icons/fa6";
 
 
+
 const Navbar = () => {
     return (
         <div className='min-h-[10vh] shadow p-3 flex flex-col text-center space-y-5 md:flex-row justify-between items-center bg-[#fff7ed]'>
@@ -21,7 +22,9 @@ const Navbar = () => {
                 <li><NavLink href={'/my-bookings'}>My Bookings</NavLink></li>
             </ul>
 
+            <Button variant="primary"><NavLink href={'/register'}>Register</NavLink></Button>
             <Button variant='primary'>Login</Button>
+            
 
             
             <Dropdown>
