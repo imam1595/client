@@ -5,8 +5,10 @@ import {Button, Description, FieldError, Form, Input, Label, TextField} from "@h
 import { Card } from '@heroui/react';
 import { redirect } from "next/navigation";
 import {  toast } from 'react-toastify';
+import { FcGoogle } from "react-icons/fc";
 
 import React from 'react';
+import Link from "next/link";
 
 const LoginPage = () => {
 
@@ -31,6 +33,21 @@ const LoginPage = () => {
         if(error) {
             toast.error(error.message)
             console.log(error);
+        }
+    }
+
+    const handleGoogle = async () => {
+        const { data, error } = await authClient.signIn.social({
+            provider: "google",
+            callbackURL: "/",
+        });
+
+        if (data) {
+            toast.success("Logged in with Google!");
+        }
+
+        if (error) {
+            toast.error(error.message);
         }
     }
 
@@ -100,11 +117,15 @@ const LoginPage = () => {
                     </Form>
 
                     <div className="flex gap-2">
-                        <Button variant="primary" type="submit" className={'w-full'}>
-                        <Check />
-                        Register with Google
+                        <Button variant="primary" onClick={handleGoogle} className={'w-full'}>
+                        <FcGoogle />
+                        Login with Google
                         </Button>
                         
+                    </div>
+
+                    <div>
+                        <h1 className="text-xl">Do not have an Account <span className="text-xl text-accent"><Link href={'/register'}>Register</Link></span></h1>
                     </div>
             </Card>
         </div>
