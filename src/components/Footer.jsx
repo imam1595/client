@@ -5,7 +5,7 @@ import { FaCarSide } from "react-icons/fa6";
 
 const Footer = () => {
     return (
-        <div className='bg-[#e2c29a] text-black container mx-auto mt-10  p-10 text-center flex flex-col space-y-5'>
+        <div className='bg-[#e2c29a] text-black mt-10 text-center flex flex-col space-y-5'>
 
             <div>
                 <div className='border-b p-4 md:flex md:justify-between'>

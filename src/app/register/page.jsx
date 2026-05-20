@@ -5,7 +5,7 @@ import {Button, Description, FieldError, Form, Input, Label, TextField} from "@h
 import { Card } from '@heroui/react';
 import { redirect } from "next/navigation";
 import {  toast } from 'react-toastify';
-
+import { FcGoogle } from "react-icons/fc";
 import React from 'react';
 
 const RegisterPage = () => {
@@ -33,6 +33,12 @@ const RegisterPage = () => {
             toast.error(error.message)
             console.log(error);
         }
+    }
+
+    const handleGoogle = async () => {
+        await authClient.signIn.social({
+            provider: "google"
+        });
     }
 
     return (
@@ -121,8 +127,8 @@ const RegisterPage = () => {
                     </Form>
 
                     <div className="flex gap-2">
-                        <Button variant="primary" type="submit" className={'w-full'}>
-                        <Check />
+                        <Button variant="primary" className={'w-full'} onClick={handleGoogle}>
+                        <FcGoogle />
                         Register with Google
                         </Button>
                         
