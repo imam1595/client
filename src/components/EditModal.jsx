@@ -17,7 +17,7 @@ export function EditModal({myAddedCar}) {
         const formData = new FormData(e.currentTarget)
         const Cars = Object.fromEntries(formData.entries())
 
-        console.log(Cars);
+        // console.log(Cars);
   
         const res = await fetch(`http://localhost:5000/myAddedCars/${_id}`, {
           method: "PATCH",

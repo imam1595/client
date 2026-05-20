@@ -2,6 +2,7 @@ import { Button } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 import { EditModal } from './EditModal';
+import { DeleteAlert } from './DeleteAlert';
 
 const MyAddedCarCard = ({myAddedCar}) => {
     return (
@@ -24,7 +25,7 @@ const MyAddedCarCard = ({myAddedCar}) => {
             </div>
             <div className='flex gap-3'>
                 <EditModal myAddedCar={myAddedCar}/>
-                <Button variant='danger'>Delete</Button>
+                <DeleteAlert myAddedCar={myAddedCar}/>
             </div>
         </div>
     );
