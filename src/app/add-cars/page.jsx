@@ -1,29 +1,49 @@
 "use client"
 
 import { FieldError, Input, Label, TextField, Select, ListBox, TextArea, Button, Card } from "@heroui/react";
+import { toast } from "react-toastify";
 
 const AddDestinationPage = () => {
     const onSubmit = async (e) => {
-        e.preventDefault()
-        const formData = new FormData(e.currentTarget)
-        const Cars = Object.fromEntries(formData.entries())
+      e.preventDefault()
 
-        console.log(Cars)
+      const formData = new FormData(e.currentTarget)
+      const Cars = Object.fromEntries(formData.entries())
 
-        const res = await fetch('http://localhost:5000/car', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(Cars)
-        })
+      try {
 
-        const data = await res.json()
+          const res = await fetch('http://localhost:5000/car', {
+              method: 'POST',
+              headers: {
+                  'content-type': 'application/json'
+              },
+              body: JSON.stringify(Cars)
+          })
 
-        console.log(data);
+          const data = await res.json()
 
+          console.log(data);
 
-    }
+          if (data.result1.insertedId) {
+
+              toast.success('Car Added Successfully')
+
+              e.target.reset()
+
+          } else {
+
+              toast.error('Something went wrong')
+
+          }
+
+      } catch (error) {
+
+          console.log(error);
+
+          toast.error('Something went wrong')
+
+      }
+  }
 
     return (
         <div className="p-5">
