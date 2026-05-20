@@ -28,13 +28,13 @@ const CarDetailsClientPage = ({car}) => {
             location: car.location,
             userEmail: user?.email, 
             userName: user?.name,
-            userId: user?._id,
+            userId: user?.id,
             driverNeeded,
             specialNote,
             bookingDate: new Date(),
         };
 
-        // console.log(bookingData)
+        console.log(bookingData)
 
         try {
             const res = await fetch('http://localhost:5000/bookings', {
