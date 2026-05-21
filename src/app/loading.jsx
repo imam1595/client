@@ -1,11 +1,12 @@
-import React from 'react';
+"use client";
 
-const LoadingPage = () => {
-    return (
-        <div className='flex h-[80vh] items-center justify-center'>
-            <span className="loading loading-spinner loading-xl"></span>
-        </div>
-    );
-};
+import { PulseLoader } from "react-spinners";
 
-export default LoadingPage;
+export default function Loading() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+      <PulseLoader size={12} />
+      <p className="text-lg font-medium">Loading...</p>
+    </div>
+  );
+}
