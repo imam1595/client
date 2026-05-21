@@ -18,7 +18,7 @@ const carDetails = async ({params}) => {
         headers: {
             authorization: `Bearer ${token}`
         }
-    });
+    }); 
     const car = await res.json();
 
 

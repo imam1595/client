@@ -34,12 +34,17 @@ const CarDetailsClientPage = ({car}) => {
             bookingDate: new Date(),
         };
 
-        console.log(bookingData)
+        // console.log(bookingData)
+
+        const {data:tokenData} = await authClient.token();
+        // console.log(tokenData);
 
         try {
             const res = await fetch('http://localhost:5000/bookings', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json',
+                    authorization: `Bearer ${tokenData?.token}`
+                },
                 body: JSON.stringify(bookingData),
             });
 
@@ -66,6 +71,7 @@ const CarDetailsClientPage = ({car}) => {
                     src={car.imageUrl}
                     alt={"car pic"}
                     fill
+                    priority 
                     className="object-cover"
                     />
                 </div>
