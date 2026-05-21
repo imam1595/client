@@ -5,6 +5,7 @@ import { headers } from 'next/headers';
 import React from 'react';
 
 
+
 const carDetails = async ({params}) => {
     const {id} = await params;
 
@@ -27,7 +28,10 @@ const carDetails = async ({params}) => {
     // console.log(car);
 
     return (
+        
+            
         <CarDetailsClientPage car={car}/>
+        
     );
 };
 
