@@ -4,7 +4,7 @@ import { Button } from '@heroui/react';
 import Link from 'next/link';
 
 const AvailableCars = async () => {
-    const res = await fetch('http://localhost:5000/car')
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/car`)
     const cars = await res.json();
 
 

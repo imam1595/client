@@ -19,7 +19,7 @@ export function EditModal({myAddedCar}) {
 
         // console.log(Cars);
   
-        const res = await fetch(`http://localhost:5000/myAddedCars/${_id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/myAddedCars/${_id}`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json"

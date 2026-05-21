@@ -10,7 +10,7 @@ export function DeleteAlert({myAddedCar}) {
     const router = useRouter();
 
     const handleDelete = async () => {
-        const res = await fetch(`http://localhost:5000/myAddedCars/${_id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/myAddedCars/${_id}`, {
           method: "DELETE",
           headers: {
             "content-type": "application/json"
