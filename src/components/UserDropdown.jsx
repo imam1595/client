@@ -27,6 +27,7 @@ const UserDropdown = ({ user }) => {
     const handleLogout = () => {
         authClient.signOut();
         setIsOpen(false);
+        router.replace("/");
     };
 
     return (
