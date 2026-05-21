@@ -1,11 +1,24 @@
 import MyAddedCarCard from '@/components/MyAddedCarCard';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 import { Button } from '@heroui/react';
 import Link from 'next/link';
 import React from 'react';
 
-const page = async () => {
+const MyAddedCars = async () => {
 
-    const res = await fetch('http://localhost:5000/myAddedCars')
+    const {token} = await auth.api.getToken({
+        headers: await headers()
+    })
+
+    console.log(token);
+    console.log("token")
+
+    const res = await fetch('http://localhost:5000/myAddedCars',{
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    })
     const myAddedCars = await res.json();
 
     console.log(myAddedCars);
@@ -47,11 +60,11 @@ const page = async () => {
                         }
                     </div>
                 )
-            }
+            } 
             </div>
             
         </div>
     );
 };
 
-export default page;
+export default MyAddedCars;
