@@ -70,7 +70,7 @@ const UserDropdown = ({ user }) => {
                                 onClick={() => handleNavigate("/explore-cars")}
                                 className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500 transition"
                             >
-                                🚗 Explore Cars
+                                 Explore Cars
                             </button>
                         </li>
                         <li>
@@ -78,7 +78,7 @@ const UserDropdown = ({ user }) => {
                                 onClick={() => handleNavigate("/add-cars")}
                                 className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500 transition"
                             >
-                                ➕ Add Cars
+                                 Add Cars
                             </button>
                         </li>
                         <li>
@@ -86,7 +86,7 @@ const UserDropdown = ({ user }) => {
                                 onClick={() => handleNavigate("/my-bookings")}
                                 className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500 transition"
                             >
-                                📋 My Bookings
+                                 My Bookings
                             </button>
                         </li>
                         <li>
@@ -94,7 +94,7 @@ const UserDropdown = ({ user }) => {
                                 onClick={() => handleNavigate("/my-cars")}
                                 className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-500 transition"
                             >
-                                🏎️ My Added Cars
+                                 My Added Cars
                             </button>
                         </li>
                     </ul>
@@ -105,7 +105,7 @@ const UserDropdown = ({ user }) => {
                             onClick={handleLogout}
                             className="w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-50 transition"
                         >
-                            🚪 Logout
+                             Logout
                         </button>
                     </div>
                 </div>

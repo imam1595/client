@@ -17,10 +17,37 @@ const page = async () => {
                 <Link href={'/add-cars'}><Button variant='primary'>Add Cars</Button></Link>
             </div>
 
-            <div className='border shadow-2xl mt-10 p-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
+            <div>
                 {
-                    myAddedCars.map(myAddedCar => <MyAddedCarCard myAddedCar={myAddedCar} key={myAddedCar._id}/>)
-                }
+                myAddedCars.length === 0 ? (
+                    <div className='border shadow-2xl mt-10 p-10 rounded-xl text-center'>
+                        <h2 className='text-2xl font-semibold text-gray-700'>
+                            No cars added yet 
+                        </h2>
+
+                        <p className='text-gray-500 mt-2'>
+                            Add your first car to see it here.
+                        </p>
+
+                        <Link href="/add-cars">
+                            <Button className='mt-5' variant='primary'>
+                                Add Car
+                            </Button>
+                        </Link>
+                    </div>
+                ) : (
+                    <div className='border shadow-2xl mt-10 p-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
+                        {
+                            myAddedCars.map(myAddedCar => (
+                                <MyAddedCarCard
+                                    myAddedCar={myAddedCar}
+                                    key={myAddedCar._id}
+                                />
+                            ))
+                        }
+                    </div>
+                )
+            }
             </div>
             
         </div>
